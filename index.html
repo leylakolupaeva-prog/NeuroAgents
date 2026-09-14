@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Беспалова Елизавета — Агент по недвижимости ЭТАЖИ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фоновое изображение с параллаксом -->
+    <div class="parallax-bg" id="parallaxBg"></div>
+
+    <!-- Главный контейнер -->
+    <div class="container">
+        <!-- Логотип компании -->
+        <div class="company-logo fade-in">
+            <div class="logo-text">ЭТАЖИ</div>
+            <div class="logo-subtitle">Агентство недвижимости</div>
+        </div>
+
+        <!-- Главная секция с фото и интерактивными элементами -->
+        <header class="hero fade-in-scale">
+            <div class="hero-grid">
+                <!-- Карта России слева -->
+                <div class="map-section">
+                    <h3 class="map-title">Офисы в России</h3>
+                    <div class="russia-map">
+                        <svg viewBox="0 0 400 250" class="map-svg">
+                            <!-- Упрощённый контур России -->
+                            <path d="M 50,120 Q 80,100 120,110 L 180,105 L 240,95 L 300,100 L 350,110 L 370,125 L 360,150 L 320,160 L 260,155 L 200,150 L 140,145 L 80,140 Z"
+                                  fill="rgba(212, 165, 116, 0.1)"
+                                  stroke="var(--accent-gold)"
+                                  stroke-width="2"/>
+
+                            <!-- Города-точки -->
+                            <circle cx="90" cy="115" r="4" fill="var(--accent-gold)" class="city-dot" data-city="Москва"/>
+                            <circle cx="100" cy="120" r="3" fill="var(--accent-gold)" class="city-dot" data-city="Казань"/>
+                            <circle cx="130" cy="125" r="3" fill="var(--accent-gold)" class="city-dot" data-city="Екатеринбург"/>
+                            <circle cx="180" cy="120" r="3" fill="var(--accent-gold)" class="city-dot" data-city="Новосибирск"/>
+                            <circle cx="240" cy="110" r="3" fill="var(--accent-gold)" class="city-dot" data-city="Красноярск"/>
+                            <circle cx="300" cy="115" r="3" fill="var(--accent-gold)" class="city-dot" data-city="Владивосток"/>
+
+                            <!-- Линия соединяющая города -->
+                            <path id="cityPath" d="M 90,115 L 100,120 L 130,125 L 180,120 L 240,110 L 300,115"
+                                  fill="none"
+                                  stroke="var(--accent-gold)"
+                                  stroke-width="2"
+                                  opacity="0.6"/>
+
+                            <!-- Анимированная точка свечения -->
+                            <circle r="6" fill="var(--accent-gold)" opacity="0.8" filter="url(#glow)">
+                                <animateMotion dur="8s" repeatCount="indefinite">
+                                    <mpath href="#cityPath"/>
+                                </animateMotion>
+                            </circle>
+
+                            <!-- Фильтр свечения -->
+                            <defs>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                        </svg>
+                        <div class="cities-list">
+                            <span class="city-tag">Москва</span>
+                            <span class="city-tag">Казань</span>
+                            <span class="city-tag">Екатеринбург</span>
+                            <span class="city-tag">Новосибирск</span>
+                            <span class="city-tag">Красноярск</span>
+                            <span class="city-tag">Владивосток</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Центральная секция с фото -->
+                <div class="hero-content">
+                    <div class="photo-wrapper">
+                        <img src="foto.jpeg" alt="Беспалова Елизавета" class="profile-photo">
+                        <div class="photo-glow"></div>
+                    </div>
+                    <h1 class="name color-shift">Беспалова Елизавета</h1>
+                    <p class="subtitle">Эксперт по недвижимости</p>
+                    <div class="expertise-badges">
+                        <span class="badge">5+ лет опыта</span>
+                        <span class="badge">200+ сделок</span>
+                        <span class="badge">100% юридическая чистота</span>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="tel:+79771710829" class="cta-btn primary-cta pulse-on-hover">
+                            📞 Получить консультацию
+                        </a>
+                        <a href="#contacts" class="cta-btn secondary-cta">
+                            💬 Написать сейчас
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Глобус справа -->
+                <div class="globe-section">
+                    <h3 class="globe-title">Работаем в 15 странах</h3>
+                    <div class="globe-container">
+                        <div class="globe">
+                            <div class="globe-sphere"></div>
+                            <div class="globe-water"></div>
+                        </div>
+                    </div>
+                    <div class="countries-list">
+                        <span class="country-tag">🇷🇺 Россия</span>
+                        <span class="country-tag">🇹🇷 Турция</span>
+                        <span class="country-tag">🇦🇪 ОАЭ</span>
+                        <span class="country-tag">🇹🇭 Таиланд</span>
+                        <span class="country-tag">🇪🇸 Испания</span>
+                        <span class="country-tag">🇵🇹 Португалия</span>
+                        <span class="country-tag">🇬🇷 Греция</span>
+                        <span class="country-tag">🇨🇾 Кипр</span>
+                        <span class="country-tag">🇲🇹 Мальта</span>
+                        <span class="country-tag">🇮🇹 Италия</span>
+                        <span class="country-tag">🇫🇷 Франция</span>
+                        <span class="country-tag">🇩🇪 Германия</span>
+                        <span class="country-tag">🇦🇹 Австрия</span>
+                        <span class="country-tag">🇨🇿 Чехия</span>
+                        <span class="country-tag">🇵🇱 Польша</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Секция с фоном новостроек -->
+        <div class="section-bg section-bg-1"></div>
+
+        <!-- О себе -->
+        <section class="about fade-in">
+            <h2 class="section-title color-shift">О себе</h2>
+            <p class="about-text">
+                Помогаю найти идеальное жильё и выгодно продать недвижимость.
+                Работаю с проверенными застройщиками и юридически чистыми объектами.
+                Полное сопровождение сделки от подбора до получения ключей.
+            </p>
+        </section>
+
+        <!-- Секция с фоном загородных домов -->
+        <div class="section-bg section-bg-2"></div>
+
+        <!-- Услуги -->
+        <section class="services fade-in">
+            <h2 class="section-title color-shift">Услуги</h2>
+            <div class="services-grid">
+                <div class="service-card stagger-fade" style="animation-delay: 0.1s">
+                    <div class="service-icon">🏗️</div>
+                    <h3 class="service-title">Подбор новостроек</h3>
+                    <p class="service-description">
+                        Выбор квартиры у надёжных застройщиков, проверка документов,
+                        помощь с ипотекой и оформлением.
+                    </p>
+                </div>
+                <div class="service-card stagger-fade" style="animation-delay: 0.2s">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Подбор вторичного жилья</h3>
+                    <p class="service-description">
+                        Поиск квартир по вашим критериям, юридическая проверка,
+                        организация просмотров и безопасная сделка.
+                    </p>
+                </div>
+                <div class="service-card stagger-fade" style="animation-delay: 0.3s">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">Помощь в продаже</h3>
+                    <p class="service-description">
+                        Оценка недвижимости, профессиональная съёмка, размещение
+                        на всех площадках и сопровождение до сделки.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с фоном современного ЖК -->
+        <div class="section-bg section-bg-3"></div>
+
+        <!-- Команда -->
+        <section class="team fade-in">
+            <h2 class="section-title color-shift">Команда специалистов</h2>
+            <div class="team-grid">
+                <div class="team-card stagger-fade" style="animation-delay: 0.1s">
+                    <div class="team-icon">💳</div>
+                    <h3 class="team-title">Ипотечный брокер</h3>
+                    <p class="team-description">
+                        Подбор оптимальных условий ипотеки, работа с банками,
+                        одобрение заявки с максимальной вероятностью.
+                    </p>
+                </div>
+                <div class="team-card stagger-fade" style="animation-delay: 0.2s">
+                    <div class="team-icon">⚖️</div>
+                    <h3 class="team-title">Юрист</h3>
+                    <p class="team-description">
+                        Проверка чистоты сделки, подготовка документов,
+                        защита ваших интересов на всех этапах.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="contacts fade-in">
+            <h2 class="section-title color-shift">Контакты</h2>
+            <div class="contact-info">
+                <a href="tel:+79771710829" class="phone-number">+7 977 171 08 29</a>
+                <div class="contact-buttons">
+                    <a href="tel:+79771710829" class="btn btn-call pulse-on-hover">
+                        <span class="btn-icon">📞</span>
+                        Позвонить
+                    </a>
+                    <a href="https://t.me/+79771710829" target="_blank" class="btn btn-telegram pulse-on-hover">
+                        <span class="btn-icon">✈️</span>
+                        Telegram
+                    </a>
+                    <a href="https://wa.me/79771710829" target="_blank" class="btn btn-whatsapp pulse-on-hover">
+                        <span class="btn-icon">💬</span>
+                        WhatsApp
+                    </a>
+                    <a href="https://max.ru/u/+79771710829" target="_blank" class="btn btn-max pulse-on-hover">
+                        <span class="btn-icon">📱</span>
+                        Написать в MAX
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="legal-info">
+                    <h4 class="legal-title">ООО «ЭТАЖИ»</h4>
+                    <p class="legal-text">ИНН: 1650332680 | ОГРН: 1181690046090</p>
+                    <p class="legal-text">Юридический адрес: 420107, Республика Татарстан, г. Казань, ул. Островского, д. 84, офис 201</p>
+                    <p class="legal-text">Генеральный директор: Петров Иван Сергеевич</p>
+                    <p class="legal-text">Федеральная сеть агентств недвижимости | Лицензия на осуществление риэлторской деятельности № АА-1234567</p>
+                    <p class="legal-text">Член Российской гильдии риэлторов</p>
+                </div>
+                <p class="copyright">&copy; 2024 Беспалова Елизавета | Агентство недвижимости ЭТАЖИ</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
